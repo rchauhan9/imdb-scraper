@@ -1,0 +1,14 @@
+mutation CreateDirectedRelation($personName: String!, $personDOB: String!, $titleName: String, $titleReleased: Int!) {
+  createDirectedRelation(personName: $personName, personDOB: $personDOB, titleName: $titleName, titleReleased:
+  $titleReleased) {
+    person {
+      name
+      dateOfBirth
+    }
+    title {
+      name
+      released
+      certificateRating
+    }
+  }
+}

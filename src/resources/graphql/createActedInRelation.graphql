@@ -1,0 +1,18 @@
+mutation CreateActedInRelation($personName: String!, $personDOB: String!, $titleName: String, $titleReleased: Int!,
+    $characters: [String]!, $billing: Int) {
+    createActedInRelation(personName: $personName, personDOB: $personDOB, titleName: $titleName, titleReleased:
+    $titleReleased, characters: $characters, billing: $billing) {
+        person {
+            id
+            name
+            dateOfBirth
+            urlID
+        }
+        title {
+            name
+            released
+        }
+        characters
+        billing
+    }
+}

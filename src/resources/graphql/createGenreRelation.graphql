@@ -1,0 +1,12 @@
+mutation CreateGenreRelation($titleName: String!, $titleReleased: String!, $genreName: String!) {
+    createGenreRelation(titleName: $titleName, titleReleased: $titleReleased, genreName: $genreName) {
+        title {
+            name
+            released
+            titleLengthInMins
+        }
+        genre {
+            name
+        }
+    }
+}

@@ -1,0 +1,12 @@
+mutation CreateTitle($name: String, $summary: String, $released: Int, $certificateRating: String, $titleLengthInMins: Int, $storyline: String, $tagline: String) {
+  createTitle(name: $name, summary: $summary, released: $released, certificateRating: $certificateRating, titleLengthInMins: $titleLengthInMins, storyline: $storyline, tagline: $tagline) {
+    id
+    name
+    summary
+    released
+    certificateRating
+    titleLengthInMins
+    storyline
+    tagline
+  }
+}

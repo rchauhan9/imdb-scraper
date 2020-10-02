@@ -1,0 +1,322 @@
+{
+  "Leonardo DiCaprio": {
+    "search_uri": "https://www.imdb.com/find?q=leonardo+dicaprio&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/name/nm0000138/",
+    "awards_uri": "https://www.imdb.com/name/nm0000138/awards?ref_=nm_ql_2",
+    "contents": {
+      "name": "Leonardo DiCaprio",
+      "date_of_birth": "11-Nov-1974"
+    },
+    "relations": {
+      "Academy Awards": [{
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2020,
+        "title_name": "Once Upon a Time... in Hollywood",
+        "title_released": 2019
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Winner",
+        "year": 2016,
+        "title_name": "The Revenant",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "The Wolf of Wall Street",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Motion Picture of the Year",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "The Wolf of Wall Street",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2007,
+        "title_name": "Blood Diamond",
+        "title_released": 2006
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2005,
+        "title_name": "The Aviator",
+        "title_released": 2004
+      },
+      {
+        "name": "Best Actor in a Supporting Role",
+        "outcome": "Nominee",
+        "year": 1994,
+        "title_name": "What's Eating Gilbert Grape",
+        "title_released": 1993
+      }],
+      "Golden Globes": [{
+        "name": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "outcome": "Nominee",
+        "year": 2020,
+        "title_name": "Once Upon a Time... in Hollywood",
+        "title_released": 2019
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Winner",
+        "year": 2016,
+        "title_name": "The Revenant",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Comedy or Musical",
+        "outcome": "Winner",
+        "year": 2014,
+        "title_name": "The Wolf of Wall Street",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Performance by an Actor in a Supporting Role in a Motion Picture",
+        "outcome": "Nominee",
+        "year": 2013,
+        "title_name": "Django Unchained",
+        "title_released": 2012
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2012,
+        "title_name": "J. Edgar",
+        "title_released": 2011
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2009,
+        "title_name": "Revolutionary Road",
+        "title_released": 2008
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2007,
+        "title_name": "Blood Diamond",
+        "title_released": 2006
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2007,
+        "title_name": "The Departed",
+        "title_released": 2006
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Winner",
+        "year": 2005,
+        "title_name": "The Aviator",
+        "title_released": 2004
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2003,
+        "title_name": "Catch Me If You Can",
+        "title_released": 2002
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 1998,
+        "title_name": "Titanic",
+        "title_released": 1997
+      },
+      {
+        "name": "Best Performance by an Actor in a Supporting Role in a Motion Picture",
+        "outcome": "Nominee",
+        "year": 1994,
+        "title_name": "What's Eating Gilbert Grape",
+        "title_released": 1993
+      }],
+      "BAFTA Awards": [{
+        "name": "Best Leading Actor",
+        "outcome": "Nominee",
+        "year": 2020,
+        "title_name": "Once Upon a Time... in Hollywood",
+        "title_released": 2019
+      },
+      {
+        "name": "Best Leading Actor",
+        "outcome": "Winner",
+        "year": 2016,
+        "title_name": "The Revenant",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Leading Actor",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "The Wolf of Wall Street",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2007,
+        "title_name": "The Departed",
+        "title_released": 2006
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2005,
+        "title_name": "The Aviator",
+        "title_released": 2004
+      }]
+    }
+  },
+  "Christian Bale": {
+    "search_uri": "https://www.imdb.com/find?q=christian+bale&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/name/nm0000288/",
+    "awards_uri": "https://www.imdb.com/name/nm0000288/awards?ref_=nm_ql_2",
+    "contents": {
+      "name": "Christian Bale",
+      "date_of_birth": "30-Jan-1974"
+    },
+    "relations": {
+      "Academy Awards": [{
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2019,
+        "title_name": "Vice",
+        "title_released": 2018
+      },
+      {
+        "name": "Best Performance by an Actor in a Supporting Role",
+        "outcome": "Nominee",
+        "year": 2016,
+        "title_name": "The Big Short",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Performance by an Actor in a Leading Role",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "American Hustle",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Performance by an Actor in a Supporting Role",
+        "outcome": "Winner",
+        "year": 2011,
+        "title_name": "The Fighter",
+        "title_released": 2010
+      }],
+      "Golden Globes": [{
+        "name": "Best Performance by an Actor in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2020,
+        "title_name": "Ford v Ferrari",
+        "title_released": 2019
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Musical or Comedy",
+        "outcome": "Winner",
+        "year": 2019,
+        "title_name": "Vice",
+        "title_released": 2018
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Comedy or Musical",
+        "outcome": "Nominee",
+        "year": 2016,
+        "title_name": "The Big Short",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Performance by an Actor in a Motion Picture - Comedy or Musical",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "American Hustle",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Performance by an Actor in a Supporting Role in a Motion Picture",
+        "outcome": "Winner",
+        "year": 2011,
+        "title_name": "The Fighter",
+        "title_released": 2010
+      }],
+      "BAFTA Awards": [{
+        "name": "Best Leading Actor",
+        "outcome": "Nominee",
+        "year": 2019,
+        "title_name": "Vice",
+        "title_released": 2018
+      },
+      {
+        "name": "Best Supporting Actor",
+        "outcome": "Nominee",
+        "year": 2016,
+        "title_name": "The Big Short",
+        "title_released": 2015
+      },
+      {
+        "name": "Best Leading Actor",
+        "outcome": "Nominee",
+        "year": 2014,
+        "title_name": "American Hustle",
+        "title_released": 2013
+      },
+      {
+        "name": "Best Supporting Actor",
+        "outcome": "Nominee",
+        "year": 2011,
+        "title_name": "The Fighter",
+        "title_released": 2010
+      }]
+    }
+  },
+  "Gwyneth Paltrow": {
+    "search_uri": "https://www.imdb.com/find?q=gwyneth+paltrow&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/name/nm0000569/",
+    "awards_uri": "https://www.imdb.com/name/nm0000569/awards?ref_=nm_ql_2",
+    "contents": {
+      "name": "Gwyneth Paltrow",
+      "date_of_birth": "27-Sep-1972"
+    },
+    "relations": {
+      "Academy Awards": [{
+        "name": "Best Actress in a Leading Role",
+        "outcome": "Winner",
+        "year": 1999,
+        "title_name": "Shakespeare in Love",
+        "title_released": 1998
+      }],
+      "Golden Globes": [{
+        "name": "Best Performance by an Actress in a Motion Picture - Drama",
+        "outcome": "Nominee",
+        "year": 2006,
+        "title_name": "Proof",
+        "title_released": 2005
+      },
+      {
+        "name": "Best Performance by an Actress in a Motion Picture - Comedy or Musical",
+        "outcome": "Winner",
+        "year": 1999,
+        "title_name": "Shakespeare in Love",
+        "title_released": 1998
+      }],
+      "BAFTA Awards": [{
+        "name": "Best Performance by an Actress in a Leading Role",
+        "outcome": "Nominee",
+        "year": 1999,
+        "title_name": "Shakespeare in Love",
+        "title_released": 1998
+      }]
+    }
+  }
+}

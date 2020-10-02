@@ -1,0 +1,15 @@
+mutation CreateWonRelation($personName: String!, $personDOB: String!, $awardName: String! $awardOrganisation:
+String!, $wonYear: Int!, $titleName: String!, $titleReleased: Int!) {
+    createWonRelation(personName: $personName, personDOB: $personDOB, awardName: $awardName, awardOrganisation:
+    $awardOrganisation, wonYear: $wonYear, titleName: $titleName, titleReleased: $titleReleased) {
+        person {
+            name
+        }
+        award {
+            name
+        }
+        year
+        titleName
+        titleReleased
+    }
+}

@@ -1,0 +1,178 @@
+{
+  "Avengers Endgame": {
+    "search_uri": "https://www.imdb.com/find?q=avengers+endgame&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/title/tt4154796/",
+    "credits_uri": "https://www.imdb.com/title/tt4154796/fullcredits?ref_=tt_ql_1",
+    "contents": {
+      "name": "Avengers: Endgame",
+      "summary": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.",
+      "released": 2019,
+      "certificate_rating": "12A",
+      "title_length_in_mins": 181,
+      "storyline": "After the devastating events of Avengers: Infinity War (2018), the universe is in ruins due to the efforts of the Mad Titan, Thanos. With the help of remaining allies, the Avengers must assemble once more in order to undo Thanos's actions and undo the chaos to the universe, no matter what consequences may be in store, and no matter who they face...",
+      "tagline": "Nothing can prepare you for the end."
+    },
+    "relations": {
+      "genres": ["Action", "Adventure", "Drama", "Sci-Fi"],
+      "directors": ["Anthony Russo", "Joe Russo"],
+      "writers": {
+        "Christopher Markus": ["screenplay by"],
+        "Stephen McFeely": ["screenplay by"],
+        "Stan Lee": ["based on the Marvel comics by", "Groot created by"],
+        "Jack Kirby": ["based on the Marvel comics by", "Captain America created by", "Groot created by"],
+        "Joe Simon": ["Captain America created by"],
+        "Steve Englehart": ["Star-Lord created by", "Mantis created by"],
+        "Steve Gan": ["Star-Lord created by"],
+        "Bill Mantlo": ["Rocket Raccoon created by"],
+        "Keith Giffen": ["Rocket Raccoon created by"],
+        "Jim Starlin": ["Thanos, Gamora & Drax created by"],
+        "Larry Lieber": ["Groot created by"],
+        "Don Heck": ["Mantis created by"]
+      },
+      "producers": {
+        "Victoria Alonso": ["executive producer"],
+        "Mitchell Bell": ["co-producer (as Mitch Bell)"],
+        "Ari Costa": ["associate producer"],
+        "Louis D'Esposito": ["executive producer"],
+        "Jon Favreau": ["executive producer"],
+        "Kevin Feige": ["producer"],
+        "Michael Grillo": ["executive producer"],
+        "James Gunn": ["executive producer"],
+        "Stan Lee": ["executive producer"],
+        "Christopher Markus": ["co-producer"],
+        "Stephen McFeely": ["co-producer"],
+        "JoAnn Perritano": ["associate producer"],
+        "Edu Sallouti": ["line producer: BPS (as Eduardo Sallouti)"],
+        "Nicholas Simon": ["line producer: Indochina"],
+        "Trinh Tran": ["executive producer"],
+        "Jen Underdahl": ["co-producer"]
+      },
+      "cast": {
+        "Robert Downey Jr.": ["Tony Stark", "Iron Man"],
+        "Chris Evans": ["Steve Rogers", "Captain America"],
+        "Mark Ruffalo": ["Bruce Banner", "Hulk"],
+        "Chris Hemsworth": ["Thor"],
+        "Scarlett Johansson": ["Natasha Romanoff", "Black Widow"],
+        "Jeremy Renner": ["Clint Barton", "Hawkeye"],
+        "Don Cheadle": ["James Rhodes", "War Machine"],
+        "Paul Rudd": ["Scott Lang", "Ant-Man"],
+        "Benedict Cumberbatch": ["Doctor Strange"],
+        "Chadwick Boseman": ["T'Challa", "Black Panther"],
+        "Brie Larson": ["Carol Danvers", "Captain Marvel"],
+        "Tom Holland": ["Peter Parker", "Spider-Man"],
+        "Karen Gillan": ["Nebula"],
+        "Zoe Saldana": ["Gamora"],
+        "Evangeline Lilly": ["Hope Van Dyne", "Wasp"]
+      }
+    }
+  },
+  "The Wolf of Wall Street": {
+    "search_uri": "https://www.imdb.com/find?q=the+wolf+of+wall+street&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/title/tt0993846/",
+    "credits_uri": "https://www.imdb.com/title/tt0993846/fullcredits?ref_=tt_ql_1",
+    "contents": {
+      "name": "The Wolf of Wall Street",
+      "summary": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+      "released": 2013,
+      "certificate_rating": "18",
+      "title_length_in_mins": 180,
+      "storyline": "Jordan Belfort is a Long Island penny stockbroker who served 22 months in prison for defrauding investors in a massive 1990s securities scam that involved widespread corruption on Wall Street and in the corporate banking world, including shoe designer Steve Madden. Written by anonymous",
+      "tagline": "More is never enough"
+    },
+    "relations": {
+      "genres": ["Biography", "Crime", "Drama"],
+      "directors": ["Martin Scorsese"],
+      "writers": {
+        "Terence Winter": ["screenplay"],
+        "Jordan Belfort": ["book"]
+      },
+      "producers": {
+        "Riza Aziz": ["producer"],
+        "Richard Baratta": ["co-producer"],
+        "Marianne Bower": ["associate producer"],
+        "Leonardo DiCaprio": ["producer"],
+        "Danny Dimbort": ["executive producer"],
+        "Joel Gotler": ["executive producer"],
+        "Ted Griffin": ["co-producer"],
+        "Georgia Kacandes": ["executive producer"],
+        "Joey McFarland": ["producer"],
+        "Alexandra Milchan": ["executive producer"],
+        "Martin Scorsese": ["producer"],
+        "Adam Somner": ["co-producer"],
+        "Emma Tillinger Koskoff": ["producer"],
+        "Irwin Winkler": ["executive producer"],
+        "Rick Yorn": ["executive producer"]
+      },
+      "cast": {
+        "Leonardo DiCaprio": ["Jordan Belfort"],
+        "Jonah Hill": ["Donnie Azoff"],
+        "Margot Robbie": ["Naomi Lapaglia"],
+        "Matthew McConaughey": ["Mark Hanna"],
+        "Kyle Chandler": ["Agent Patrick Denham"],
+        "Rob Reiner": ["Max Belfort"],
+        "Jon Bernthal": ["Brad"],
+        "Jon Favreau": ["Manny Riskin"],
+        "Jean Dujardin": ["Jean Jacques Saurel"],
+        "Joanna Lumley": ["Aunt Emma"],
+        "Cristin Milioti": ["Teresa Petrillo"],
+        "Christine Ebersole": ["Leah Belfort"],
+        "Shea Whigham": ["Captain Ted Beecham"],
+        "Katarina Cas": ["Chantalle"],
+        "P.J. Byrne": ["Nicky Koskoff ('Rugrat')"]
+      }
+    }
+  },
+  "The Dark Knight": {
+    "search_uri": "https://www.imdb.com/find?q=the+dark+knight&ref_=nv_sr_sm",
+    "main_uri": "https://www.imdb.com/title/tt0468569/",
+    "credits_uri": "https://www.imdb.com/title/tt0468569/fullcredits?ref_=tt_ql_1",
+    "contents": {
+      "name": "The Dark Knight",
+      "summary": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+      "released": 2008,
+      "certificate_rating": "12A",
+      "title_length_in_mins": 152,
+      "storyline": "Set within a year after the events of Batman Begins (2005), Batman, Lieutenant James Gordon, and new District Attorney Harvey Dent successfully begin to round up the criminals that plague Gotham City, until a mysterious and sadistic criminal mastermind known only as \"The Joker\" appears in Gotham, creating a new wave of chaos. Batman's struggle against The Joker becomes deeply personal, forcing him to \"confront everything he believes\" and improve his technology to stop him. A love triangle develops between Bruce Wayne, Dent, and Rachel Dawes. Written by Leon Lombardi",
+      "tagline": "The night is darkest before the dawn."
+    },
+    "relations": {
+      "genres": ["Action", "Crime", "Drama", "Thriller"],
+      "directors": ["Christopher Nolan"],
+      "writers": {
+        "Jonathan Nolan": ["screenplay"],
+        "Christopher Nolan": ["screenplay", "story"],
+        "David S. Goyer": ["story"],
+        "Bob Kane": ["characters"]
+      },
+      "producers": {
+        "Kevin de la Noy": ["executive producer"],
+        "Jordan Goldberg": ["associate producer"],
+        "Philip Lee": ["line producer: Hong Kong"],
+        "Benjamin Melniker": ["executive producer"],
+        "Christopher Nolan": ["producer"],
+        "Lorne Orleans": ["producer (IMAX version)"],
+        "Charles Roven": ["producer"],
+        "Emma Thomas": ["producer"],
+        "Thomas Tull": ["executive producer"],
+        "Michael E. Uslan": ["executive producer"]
+      },
+      "cast": {
+        "Christian Bale": ["Bruce Wayne"],
+        "Heath Ledger": ["Joker"],
+        "Aaron Eckhart": ["Harvey Dent"],
+        "Michael Caine": ["Alfred"],
+        "Maggie Gyllenhaal": ["Rachel"],
+        "Gary Oldman": ["Gordon"],
+        "Morgan Freeman": ["Lucius Fox"],
+        "Monique Gabriela Curnen": ["Ramirez"],
+        "Ron Dean": ["Wuertz"],
+        "Cillian Murphy": ["Scarecrow"],
+        "Chin Han": ["Lau"],
+        "Nestor Carbonell": ["Mayor"],
+        "Eric Roberts": ["Maroni"],
+        "Ritchie Coster": ["Chechen"],
+        "Anthony Michael Hall": ["Mike Engel"]
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mutation CreateProducedRelation($personName: String!, $personDOB: String!, $titleName: String, $titleReleased: Int!,
+    $items: [String]!) {
+    createProducedRelation(personName: $personName, personDOB: $personDOB, titleName: $titleName, titleReleased:
+    $titleReleased, items: $items) {
+        person {
+            name
+        }
+        title {
+            name
+            released
+            titleLengthInMins
+        }
+        items
+    }
+}

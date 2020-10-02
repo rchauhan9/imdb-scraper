@@ -1,0 +1,6 @@
+mutation CreateGenre($name: String!) {
+  createGenre(name: $name) {
+    id
+    name
+  }
+}

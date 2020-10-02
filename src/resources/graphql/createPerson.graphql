@@ -1,0 +1,7 @@
+mutation CreatePerson($name: String!, $dateOfBirth: String!) {
+    createPerson(name: $name, dateOfBirth: $dateOfBirth) {
+        id
+        name
+        dateOfBirth
+    }
+}

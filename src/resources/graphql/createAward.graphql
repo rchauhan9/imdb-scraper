@@ -1,0 +1,8 @@
+mutation CreateAward($name: String!, $organisation: String) {
+    createAward(name: $name, organisation: $organisation) {
+        id
+        name
+        organisation
+        urlID
+    }
+}

@@ -1,0 +1,16 @@
+mutation CreateWroteRelation($personName: String!, $personDOB: String!, $titleName: String, $titleReleased: Int!,
+    $items: [String]!) {
+  createWroteRelation(personName: $personName, personDOB: $personDOB, titleName: $titleName, titleReleased:
+  $titleReleased, items: $items) {
+      person {
+          name
+          dateOfBirth
+      }
+      title {
+          name
+          released
+          certificateRating
+      }
+      items
+  }
+}
