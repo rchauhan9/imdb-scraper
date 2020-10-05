@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+import logging
 import re
 
 from src.model.person import Person
@@ -16,8 +17,13 @@ FULL_CREDITS_SUFFIX = "fullcredits?ref_=tt_ql_1"
 TITLE_SIGNATURE = "title/tt"
 NAME_SIGNATURE = "name/nm"
 
+logging.basicConfig(format='%(asctime)s %(levelname)s %(process)d --- %(name)s %(funcName)20s() : %(message)s',
+                    datefmt='%d-%b-%y %H:%M:%S',
+                    level=logging.INFO)
+
 
 class IMDbScraper:
+    logger = logging.getLogger('IMDbScraper')
 
     def __init__(self):
         self.soup = None
@@ -34,6 +40,7 @@ class IMDbScraper:
         Args:
             query: The searched for title.
         """
+        self.logger.info(f"Loading title page for {query}")
         self.__initialise_soup_and_urls(query)
         self.set_full_credits_url()
         self.awards_url = ""
@@ -46,6 +53,7 @@ class IMDbScraper:
         Args:
             query: The searched for title.
         """
+        self.logger.info(f"Loading person page for {query}")
         self.__initialise_soup_and_urls(query)
         self.set_awards_url()
         self.full_credits_url = ""
@@ -57,6 +65,7 @@ class IMDbScraper:
         Returns:
             A Title object containing all the scraped data.
         """
+        self.logger.info(f"Getting title contents from {self.first_result_url}")
         return Title(
             name=self.get_title_name(),
             summary=self.get_title_summary(),
@@ -74,10 +83,8 @@ class IMDbScraper:
         Returns:
             A Person object containing all the scraped data.
         """
-        return Person(
-            name=self.get_person_name(),
-            date_of_birth=self.get_person_dob()
-        )
+        self.logger.info(f"Getting person contents from {self.first_result_url}")
+        return Person(name=self.get_person_name(), date_of_birth=self.get_person_dob())
 
     def get_title_relation_contents(self) -> dict:
         """
@@ -86,6 +93,7 @@ class IMDbScraper:
         Returns:
             A dict object containing all the scraped data.
         """
+        self.logger.info(f"Getting title relation contents from {self.first_result_url}")
         return {
             "directors": self.get_title_directors(),
             "writers": self.get_title_writers(),
@@ -101,6 +109,7 @@ class IMDbScraper:
         Returns:
             A dict object containing all the scraped data.
         """
+        self.logger.info(f"Getting person relation contents from {self.first_result_url}")
         return {
             "Academy Awards": self.get_awards_for_organisation(AwardOrganisation.ACADEMY_AWARDS.value),
             "Golden Globes": self.get_awards_for_organisation(AwardOrganisation.GOLDEN_GLOBES.value),
@@ -271,7 +280,6 @@ class IMDbScraper:
         potential_genres = subtext.find_all('a')
         genres = []
         for pg in potential_genres:
-            print(str(pg))
             if 'genre' in pg['href']:
                 genres.append(pg.text.strip())
         return genres
@@ -382,6 +390,9 @@ class IMDbScraper:
             raise Exception("An IMDb name page is not loaded. Cannot extract person date of birth.")
         self.__load_soup_with_first_result_page()
         date_info = self.soup.find("time")
+        if date_info is None:
+            self.logger.error(f"Could not extract person date of birth from {self.first_result_url}.")
+            raise ParseError("Could not extract person date of birth.")
         dob_str = date_info["datetime"]
         year, month, day = dob_str.split("-")
         return datetime(year=int(year), month=int(month), day=int(day))
@@ -548,7 +559,6 @@ class IMDbScraper:
         actor_name = cast_td[1].find('a').string.replace("\n", "").strip()
         try:
             character = [c.string.strip() for c in cast_td[3].find_all('a')]
-            print(character)
         except:
             character = [cast_td[3].contents[0].strip()]
         return actor_name, character
