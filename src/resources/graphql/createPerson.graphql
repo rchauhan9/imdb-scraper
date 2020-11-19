@@ -1,7 +1,8 @@
-mutation CreatePerson($name: String!, $dateOfBirth: String!) {
-    createPerson(name: $name, dateOfBirth: $dateOfBirth) {
+mutation CreatePerson($name: String!, $dateOfBirth: String!, $bio: String) {
+    createPerson(name: $name, dateOfBirth: $dateOfBirth, bio: $bio) {
         id
         name
         dateOfBirth
+        bio
     }
 }

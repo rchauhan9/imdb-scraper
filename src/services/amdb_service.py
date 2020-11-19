@@ -83,7 +83,8 @@ class AMDbService:
         self.logger.info(f"Creating {person.__short_str__()}.")
         variables = {
             "name": person.name,
-            "dateOfBirth": person.get_dob("%Y-%m-%d")
+            "dateOfBirth": person.get_dob("%Y-%m-%d"),
+            "bio": person.bio
         }
         return self.__execute_graphql_request(filename="createPerson.graphql", variables=variables)
 
