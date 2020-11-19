@@ -80,7 +80,9 @@ def mock_req_name(request):
             "main": _mock_response(status=200,
                                    content=get_imdb_page(IMDB_NAME_PATH + "leonardo_dicaprio_main.htm")),
             "awards": _mock_response(status=200,
-                                     content=get_imdb_page(IMDB_NAME_PATH + "leonardo_dicaprio_awards.htm"))
+                                     content=get_imdb_page(IMDB_NAME_PATH + "leonardo_dicaprio_awards.htm")),
+            "bio": _mock_response(status=200,
+                                     content=get_imdb_page(IMDB_NAME_PATH + "leonardo_dicaprio_bio.htm"))
         }
     elif request.param == "cb":
         return {
@@ -88,7 +90,9 @@ def mock_req_name(request):
                                      content=get_imdb_page(IMDB_NAME_PATH + "christian_bale_search.htm")),
             "main": _mock_response(status=200, content=get_imdb_page(IMDB_NAME_PATH + "christian_bale_main.htm")),
             "awards": _mock_response(status=200,
-                                     content=get_imdb_page(IMDB_NAME_PATH + "christian_bale_awards.htm"))
+                                     content=get_imdb_page(IMDB_NAME_PATH + "christian_bale_awards.htm")),
+            "bio": _mock_response(status=200,
+                                     content=get_imdb_page(IMDB_NAME_PATH + "christian_bale_bio.htm")),
         }
     elif request.param == "gp":
         return {
@@ -96,7 +100,9 @@ def mock_req_name(request):
                                      content=get_imdb_page(IMDB_NAME_PATH + "gwyneth_paltrow_search.htm")),
             "main": _mock_response(status=200, content=get_imdb_page(IMDB_NAME_PATH + "gwyneth_paltrow_main.htm")),
             "awards": _mock_response(status=200,
-                                     content=get_imdb_page(IMDB_NAME_PATH + "gwyneth_paltrow_awards.htm"))
+                                     content=get_imdb_page(IMDB_NAME_PATH + "gwyneth_paltrow_awards.htm")),
+            "bio": _mock_response(status=200,
+                                     content=get_imdb_page(IMDB_NAME_PATH + "gwyneth_paltrow_bio.htm"))
         }
 
 
@@ -146,18 +152,20 @@ def test_load_person_page(mock_request_get, scraper, expected_name_contents, moc
     assert (scraper.search_page_url == expected["search_uri"])
     assert (scraper.first_result_url == expected["main_uri"])
     assert (scraper.awards_url == expected["awards_uri"])
+    assert (scraper.bio_url == expected["bio_uri"])
 
 
 @pytest.mark.parametrize("mock_req_name, query", [("ld", "Leonardo DiCaprio"), ("cb", "Christian Bale"),
                                                    ("gp", "Gwyneth Paltrow")], indirect=["mock_req_name"])
 @mock.patch('requests.get')
 def test_get_person_contents(mock_request_get, scraper, expected_name_contents, mock_req_name, query):
-    mock_request_get.side_effect = [mock_req_name["search"]] + [mock_req_name["main"]] * 3
+    mock_request_get.side_effect = [mock_req_name["search"]] + [mock_req_name["main"]] * 3 + [mock_req_name["bio"]]
     expected = expected_name_contents[query]["contents"]
     scraper.load_person_page(query)
     person = scraper.get_person_contents()
     assert (person.name == expected["name"])
     assert (person.get_dob("%d-%b-%Y") == expected["date_of_birth"])
+    assert (person.bio == expected["bio"])
 
 
 @pytest.mark.parametrize("mock_req_name, query", [("ld", "Leonardo DiCaprio"), ("cb", "Christian Bale"),

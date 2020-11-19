@@ -47,14 +47,14 @@ class AMDbService:
             "titleName": title.name,
             "titleReleased": title.released
         }
-        self.__execute_graphql_request(filename="createDirectedRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createDirectedRelation.graphql", variables=variables)
 
     def create_genre(self, name: str):
         self.logger.info(f"Creating Genre with name: {name}.")
         variables = {
             "name": name
         }
-        self.__execute_graphql_request(filename="createGenre.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createGenre.graphql", variables=variables)
 
     def create_genre_relation(self, title: Title, genre_name: str):
         self.logger.info(f"Creating GenreRelation between {title.__short_str__()} and Genre({genre_name}).")
@@ -63,7 +63,7 @@ class AMDbService:
             "titleReleased": title.released,
             "genreName": genre_name
         }
-        self.__execute_graphql_request(filename="createGenreRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createGenreRelation.graphql", variables=variables)
 
     def create_nominated_relation(self, person: Person, award: Award, organisation: str):
         self.logger.info(
@@ -77,7 +77,7 @@ class AMDbService:
             "titleName": award.title_name,
             "titleReleased": award.title_released
         }
-        self.__execute_graphql_request(filename="createNominatedRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createNominatedRelation.graphql", variables=variables)
 
     def create_person(self, person: Person):
         self.logger.info(f"Creating {person.__short_str__()}.")
@@ -85,7 +85,7 @@ class AMDbService:
             "name": person.name,
             "dateOfBirth": person.get_dob("%Y-%m-%d")
         }
-        self.__execute_graphql_request(filename="createPerson.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createPerson.graphql", variables=variables)
 
     def create_produced_relation(self, person: Person, title: Title, items: list):
         self.logger.info(
@@ -97,7 +97,7 @@ class AMDbService:
             "titleReleased": title.released,
             "items": items
         }
-        self.__execute_graphql_request(filename="createProducedRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createProducedRelation.graphql", variables=variables)
 
     def create_title(self, title: Title):
         self.logger.info(f"Creating {title.__short_str__()}")
@@ -110,7 +110,7 @@ class AMDbService:
             "storyline": title.storyline,
             "tagline": title.tagline
         }
-        self.__execute_graphql_request(filename="createTitle.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createTitle.graphql", variables=variables)
 
     def create_won_relation(self, person: Person, award: Award, organisation: str):
         self.logger.info(
@@ -124,7 +124,7 @@ class AMDbService:
             "titleName": award.title_name,
             "titleReleased": award.title_released
         }
-        self.__execute_graphql_request(filename="createWonRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createWonRelation.graphql", variables=variables)
 
     def create_wrote_relation(self, person: Person, title: Title, items: list):
         self.logger.info(
@@ -136,7 +136,7 @@ class AMDbService:
             "titleReleased": title.released,
             "items": items
         }
-        self.__execute_graphql_request(filename="createWroteRelation.graphql", variables=variables)
+        return self.__execute_graphql_request(filename="createWroteRelation.graphql", variables=variables)
 
     def __execute_graphql_request(self, filename: str, variables: dict):
         try:

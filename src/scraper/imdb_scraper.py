@@ -13,6 +13,7 @@ BASE_URL = "https://www.imdb.com"
 SEARCH_PREFIX = "/find?q="
 SEARCH_SUFFIX = "&ref_=nv_sr_sm"
 AWARDS_SUFFIX = "awards?ref_=nm_ql_2"
+BIO_SUFFIX = "bio?ref_=nm_ov_bio_sm"
 FULL_CREDITS_SUFFIX = "fullcredits?ref_=tt_ql_1"
 TITLE_SIGNATURE = "title/tt"
 NAME_SIGNATURE = "name/nm"
@@ -31,6 +32,7 @@ class IMDbScraper:
         self.first_result_url = ""
         self.full_credits_url = ""
         self.awards_url = ""
+        self.bio_url = ""
 
     def load_title_page(self, query):
         """
@@ -56,6 +58,7 @@ class IMDbScraper:
         self.logger.info(f"Loading person page for {query}")
         self.__initialise_soup_and_urls(query)
         self.set_awards_url()
+        self.set_bio_url()
         self.full_credits_url = ""
 
     def get_title_contents(self) -> Title:
@@ -84,7 +87,7 @@ class IMDbScraper:
             A Person object containing all the scraped data.
         """
         self.logger.info(f"Getting person contents from {self.first_result_url}")
-        return Person(name=self.get_person_name(), date_of_birth=self.get_person_dob())
+        return Person(name=self.get_person_name(), date_of_birth=self.get_person_dob(), bio=self.get_person_bio())
 
     def get_title_relation_contents(self) -> dict:
         """
@@ -163,6 +166,14 @@ class IMDbScraper:
         if NAME_SIGNATURE not in self.first_result_url:
             raise Exception("An IMDb name page is not loaded. Cannot create awards_url")
         self.awards_url = self.first_result_url + AWARDS_SUFFIX
+
+    def set_bio_url(self):
+        """
+        Sets the bio_url so person relationship data can be scraped.
+        """
+        if NAME_SIGNATURE not in self.first_result_url:
+            raise Exception("An IMDb name page is not loaded. Cannot create bio_url")
+        self.bio_url = self.first_result_url + BIO_SUFFIX
 
     def get_title_name(self) -> str:
         """
@@ -397,6 +408,24 @@ class IMDbScraper:
         year, month, day = dob_str.split("-")
         return datetime(year=int(year), month=int(month), day=int(day))
 
+    def get_person_bio(self) -> str:
+        """
+        Extracts a person's bio from any given IMDb name main page.
+
+        Returns:
+            A str containing the bio of the person.
+        """
+        if NAME_SIGNATURE not in self.first_result_url:
+            raise Exception("An IMDb name page is not loaded. Cannot extract person date of birth.")
+        self.__load_soup_with_bio_page()
+        bio_block = self.soup.find(class_="soda odd")
+        raw_bio = bio_block.find("p").contents
+        bio_list = [str(x) for x in raw_bio]
+        bio = "".join(bio_list)
+        bio = bio.replace("<br>", "\n").replace("<br/>", "\n").replace("</br>", "\n").strip()
+        bio = self.__remove_html_elements_from_string(bio)
+        return bio
+
     def get_awards_for_organisation(self, organisation: str) -> list:
         """
         Extracts a person's awards for a given organisation e.g. Academy Awards from any given IMDb name awards page.
@@ -413,9 +442,14 @@ class IMDbScraper:
         ay_marker, ao_marker = 0, ""
         for i in range(0, len(award_items)):
             award_name = award_items[i].find(class_="award_description").contents[0].string.strip()
+            if award_name is None or award_name == "":
+                award_name = award_items[i].find(class_="award_category").contents[0].string.strip()
             award_year, ay_marker = self.__set_award_year(award_items[i], ay_marker)
             award_outcome, ao_marker = self.__set_award_outcome(award_items[i], ao_marker)
-            award_title_name = award_items[i].find("a", href=re.compile("title")).contents[0].string.strip()
+            award_title_row = award_items[i].find("a", href=re.compile("title"))
+            if award_title_row is None:
+                continue
+            award_title_name = award_title_row.contents[0].string.strip()
             award_title_release = int(
                 award_items[i].find(class_="title_year").contents[0].string.strip().replace('(', '').replace(')', ''))
             awards.append(Award(name=award_name, outcome=award_outcome, year=award_year, title_name=award_title_name,
@@ -438,6 +472,12 @@ class IMDbScraper:
             raise Exception("An IMDb name or title page is not loaded. Cannot load soup with first_result_url.")
         first_result_page = requests.get(self.first_result_url)
         self.soup = BeautifulSoup(first_result_page.content, 'html.parser')
+
+    def __load_soup_with_bio_page(self):
+        if NAME_SIGNATURE not in self.awards_url:
+            raise Exception("An IMDb name page is not loaded. Cannot load soup with bio_url.")
+        bio_page = requests.get(self.bio_url)
+        self.soup = BeautifulSoup(bio_page.content, 'html.parser')
 
     def __load_soup_with_full_credits_page(self):
         if TITLE_SIGNATURE not in self.full_credits_url:

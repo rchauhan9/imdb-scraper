@@ -8,7 +8,7 @@ if __name__ == '__main__':
     client = GQLClient("http://localhost:8080/graphql")
     amdb = AMDbService(client)
 
-    scraper.load_title_page("the wolf of wall street")
+    scraper.load_title_page("the dark knight")
     title = scraper.get_title_contents()
 
     amdb.create_title(title)
@@ -16,15 +16,21 @@ if __name__ == '__main__':
     title_relations = scraper.get_title_relation_contents()
 
     # Create Director Relations
-    directors = []
     for d in title_relations["directors"]:
         scraper.load_person_page(d)
         director = scraper.get_person_contents()
-        directors.append(director)
+        director_relations = scraper.get_person_relation_contents()
 
-    for director in directors:
-        amdb.create_person(director)
-        amdb.create_directed_relation(director, title)
+        response = amdb.create_person(director)
+        if response is not None:
+            amdb.create_directed_relation(director, title)
+            for organisation, awards in director_relations.items():
+                for award in awards:
+                    amdb.create_award(award.name, organisation)
+                    if award.outcome == "Winner":
+                        amdb.create_won_relation(director, award, organisation)
+                    elif award.outcome == "Nominee":
+                        amdb.create_nominated_relation(director, award, organisation)
 
     # Create Writer Relations
     writers = {}
@@ -65,9 +71,12 @@ if __name__ == '__main__':
     billing = 0
     for actor, chars in title_relations["cast"].items():
         scraper.load_person_page(actor)
-        person = scraper.get_person_contents()
-        cast[person] = (chars, billing)
-        billing = billing + 1
+        try:
+            person = scraper.get_person_contents()
+            cast[person] = (chars, billing)
+            billing = billing + 1
+        except Exception as e:
+            continue
 
     for actor, items in cast.items():
         amdb.create_person(person=actor)
